@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="view_invoice_tree_inherit_faktur_pajak" model="ir.ui.view">
-        <field name="name">account.move.tree.inherit.faktur.pajak</field>
+    <record id="view_out_invoice_tree_inherit_faktur_pajak" model="ir.ui.view">
+        <field name="name">account.move.tree.out.inherit.faktur.pajak</field>
         <field name="model">account.move</field>
-        <field name="inherit_id" ref="account.view_invoice_tree"/>
+        <field name="inherit_id" ref="account.view_out_invoice_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="x_no_faktur_pajak" optional="show" string="No Faktur Pajak"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_in_invoice_tree_inherit_faktur_pajak" model="ir.ui.view">
+        <field name="name">account.move.tree.in.inherit.faktur.pajak</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_in_invoice_tree"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='name']" position="after">
                 <field name="x_no_faktur_pajak" optional="show" string="No Faktur Pajak"/>
