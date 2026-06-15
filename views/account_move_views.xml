@@ -5,7 +5,7 @@
         <field name="model">account.move</field>
         <field name="inherit_id" ref="account.view_invoice_tree"/>
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='invoice_partner_display_name'][last()]" position="after">
+            <xpath expr="//field[@name='name']" position="after">
                 <field name="x_no_faktur_pajak" optional="show" string="No Faktur Pajak"/>
             </xpath>
         </field>
